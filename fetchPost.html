@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FetchPost</title>
+</head>
+<body>
+    <h1>Fetch API</h1>
+    <form id="myForm">
+     <input type="text" name="name">
+     <input type="password" name="password">
+    </form>
+
+    <button id="mybtn">POST IT</button>
+
+    <script>
+
+        var data ={
+            name : 'Asad',
+            status: 'Mern Stack Developer'
+        }
+
+        const url = ''
+             
+          document.getElementById('myForm').onsubmit = (e)=>{
+              e.preventDefault();
+            fetch(url,{
+        method:'post',
+        body:JSON.stringify(data),
+        headers:{
+            'Content-Type':'application/json'
+        }
+        }).then(res=>res.json())
+        .then(res2=> console.log(res2))
+          }
+    </script>    
+</body>
+</html>

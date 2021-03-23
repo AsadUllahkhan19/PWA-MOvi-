@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch It Cheetah!!!</title>
+</head>
+<body>
+    <input type="text" id="asd"/>
+    <button id="btn">
+         Almost Got It
+    </button>
+
+    <div id="showgrid">
+
+    </div>
+<!-- <script>
+           
+           
+           
+        document.getElementById('btn').onclick = async ()=>{
+            let par = document.getElementById('asd').value;
+             console.log(par)
+            var data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${par}&units=metric&&APPID=89c03b9b5e6809d4596021327ced6502`)
+           var data2 = await data.json() // await is used to collect promise used instead of .then()
+              
+                
+
+        document.getElementById('showgrid').innerHTML = ` <ul>
+        <li>name:${data2.name}</li>
+        <li>${data2.main.temp}</li>
+        <li>${data2.weather[0].description}</li>
+        </ul>`
+        console.log(data2)
+    }
+    </script>  -->
+
+
+         <script>
+
+    // Asynchronous / Promise   ;async is a way to make any synchronous function into an Asynchronous function
+
+    async function getsum(){
+        return new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res('This is It!!')
+            })
+        })
+    }
+
+    async function wats(){
+        try{
+        var a = await getsum();
+         console.log(a)
+        }catch(err){
+            console.log(err)
+        }
+      
+    }
+
+    wats();
+
+    // getsum().then(data=>{
+    //     console.log(data)
+    // })
+    </script>
+</body>
+</html>
